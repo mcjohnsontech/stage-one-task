@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>My Personal Details</title>
+  </head>
+  <body>
+    <section class="heros-part">
+      <div class="top">
+        <img
+          src="/images/mark headshot.jpg"
+          alt="Mc Johnson"
+          srcset=""
+          data-testid="slackDisplayImage"
+        />
+        <h1 data-testid="slackUserName">Mc Johnson</h1>
+        <h3 data-testid="myTrack">Frontend</h3>
+        <a href="https://github.com/mcjohnsontech" data-testid="githubURL"
+          >Portfolio</a
+        >
+        <div class="time">
+          <a id="demo" data-testid="currentDayOfTheWeek"></a>
+          <a id="timing" data-testid="currentUTCTime"></a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const weekday = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+
+      const date = new Date();
+      let day = weekday[date.getDay()];
+      document.getElementById("demo").innerHTML = ` ${day},`;
+
+         let hour = date.getUTCHours();
+         let minutes = date.getUTCMinutes();
+         let second = date.getUTCSeconds();
+         document.getElementById("timing").innerHTML = `${hour}:${minutes}:${second}`;
+
+    </script>
+  </body>
+</html>
